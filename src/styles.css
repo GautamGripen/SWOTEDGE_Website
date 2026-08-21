@@ -22,7 +22,10 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  background: var(--bg);
+  background:
+    radial-gradient(circle at 20% -10%, rgba(243, 24, 34, 0.22), transparent 32rem),
+    radial-gradient(circle at 82% 8%, rgba(255, 198, 139, 0.13), transparent 28rem),
+    linear-gradient(180deg, #12090d 0%, #07070b 46%, #0b0708 100%);
   color: var(--ink);
   font-family: "Plus Jakarta Sans", sans-serif;
 }
@@ -50,10 +53,10 @@ button {
   overflow: hidden;
   isolation: isolate;
   background:
-    radial-gradient(ellipse 58% 32% at 50% 0%, rgba(243, 24, 34, 0.16), transparent 72%),
-    radial-gradient(ellipse 42% 28% at 8% 48%, rgba(255, 198, 139, 0.08), transparent 70%),
-    radial-gradient(ellipse 38% 24% at 92% 72%, rgba(126, 23, 22, 0.18), transparent 70%),
-    linear-gradient(180deg, #151016 0%, var(--bg) 28rem, #0b0a10 100%);
+    radial-gradient(ellipse 75% 38% at 50% -6%, rgba(243, 24, 34, 0.22), transparent 72%),
+    radial-gradient(ellipse 46% 28% at 9% 40%, rgba(255, 198, 139, 0.12), transparent 70%),
+    radial-gradient(ellipse 44% 26% at 92% 74%, rgba(126, 23, 22, 0.24), transparent 70%),
+    linear-gradient(180deg, rgba(21, 16, 22, 0.98) 0%, rgba(9, 9, 13, 0.94) 32rem, rgba(11, 10, 16, 0.98) 100%);
 }
 
 .app-shell::before,
@@ -67,33 +70,76 @@ button {
 
 .app-shell::before {
   background:
-    linear-gradient(112deg, transparent 28%, rgba(255, 198, 139, 0.075) 35%, transparent 42%),
-    linear-gradient(68deg, transparent 58%, rgba(243, 24, 34, 0.11) 66%, transparent 74%);
-  filter: blur(16px);
-  opacity: 0.72;
+    radial-gradient(ellipse 18% 52% at 18% 3%, rgba(255, 198, 139, 0.18), transparent 66%),
+    radial-gradient(ellipse 16% 55% at 78% 1%, rgba(243, 24, 34, 0.2), transparent 68%),
+    linear-gradient(112deg, transparent 28%, rgba(255, 198, 139, 0.095) 35%, transparent 42%),
+    linear-gradient(68deg, transparent 58%, rgba(243, 24, 34, 0.13) 66%, transparent 74%);
+  filter: blur(18px);
+  opacity: 0.8;
   transform: rotate(-4deg);
   animation: lightSweep 16s ease-in-out infinite alternate;
 }
 
 .app-shell::after {
   background-image:
+    radial-gradient(circle at 14% 18%, rgba(255, 198, 139, 0.18) 0 2px, transparent 3px),
+    radial-gradient(circle at 74% 12%, rgba(243, 24, 34, 0.2) 0 2px, transparent 3px),
+    radial-gradient(circle at 86% 58%, rgba(255, 255, 255, 0.12) 0 1px, transparent 2px),
     linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
     linear-gradient(135deg, transparent 49.8%, rgba(243, 24, 34, 0.08) 50%, transparent 50.2%);
-  background-size: 54px 54px, 54px 54px, 180px 180px;
+  background-size: 420px 420px, 360px 360px, 520px 520px, 54px 54px, 54px 54px, 180px 180px;
   mask-image: linear-gradient(180deg, black, transparent 88%);
-  opacity: 0.32;
+  opacity: 0.42;
 }
 
 .grid-wash {
   position: fixed;
   inset: 0;
+  z-index: -1;
   pointer-events: none;
-  background-image:
+  background:
+    radial-gradient(ellipse 120% 34% at 50% 100%, rgba(255, 198, 139, 0.1), transparent 62%),
+    radial-gradient(ellipse 74% 14% at 50% 104%, rgba(243, 24, 34, 0.18), transparent 70%),
+    linear-gradient(24deg, transparent 0 46%, rgba(255, 198, 139, 0.06) 48%, transparent 52%),
+    linear-gradient(-24deg, transparent 0 46%, rgba(243, 24, 34, 0.065) 48%, transparent 52%),
     linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-  background-size: 44px 44px;
-  opacity: 0.12;
+  background-size: auto, auto, auto, auto, 44px 44px, 44px 44px;
+  opacity: 0.76;
+}
+
+.grid-wash::before,
+.grid-wash::after {
+  position: absolute;
+  content: "";
+  pointer-events: none;
+}
+
+.grid-wash::before {
+  right: -8rem;
+  bottom: -10rem;
+  left: -8rem;
+  height: 22rem;
+  background:
+    radial-gradient(ellipse at 50% 100%, rgba(0, 0, 0, 0.78), transparent 62%),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.055) 0 1px, transparent 1px 7.5rem);
+  opacity: 0.42;
+  transform: perspective(420px) rotateX(58deg);
+  transform-origin: bottom;
+}
+
+.grid-wash::after {
+  inset: 0;
+  background:
+    radial-gradient(circle at 12% 24%, rgba(255, 198, 139, 0.18) 0 1px, transparent 2px),
+    radial-gradient(circle at 38% 18%, rgba(255, 255, 255, 0.12) 0 1px, transparent 2px),
+    radial-gradient(circle at 68% 30%, rgba(243, 24, 34, 0.16) 0 1px, transparent 2px),
+    radial-gradient(circle at 86% 44%, rgba(255, 198, 139, 0.12) 0 1px, transparent 2px);
+  background-size: 18rem 18rem, 24rem 24rem, 20rem 20rem, 28rem 28rem;
+  filter: blur(0.2px);
+  opacity: 0.48;
+  animation: bokehDrift 22s ease-in-out infinite alternate;
 }
 
 .loader {
@@ -564,6 +610,15 @@ button {
   }
 }
 
+@keyframes bokehDrift {
+  from {
+    transform: translate3d(-1.5rem, -0.5rem, 0);
+  }
+  to {
+    transform: translate3d(1.5rem, 0.75rem, 0);
+  }
+}
+
 @media (max-width: 980px) {
   .topbar {
     padding: 0.85rem 1rem;
@@ -644,6 +699,14 @@ button {
 }
 
 @media (max-width: 520px) {
+  .grid-wash {
+    opacity: 0.58;
+  }
+
+  .grid-wash::before {
+    height: 14rem;
+  }
+
   .hero h1 {
     font-size: 3.1rem;
   }
