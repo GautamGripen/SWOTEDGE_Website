@@ -515,6 +515,50 @@ button {
   transform: scale(1.04);
 }
 
+.clients-section {
+  overflow: hidden;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background: rgba(13, 13, 18, 0.62);
+}
+
+.logo-marquee {
+  position: relative;
+  overflow: hidden;
+  max-width: 1180px;
+  margin: 0 auto;
+  mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+}
+
+.logo-track {
+  display: flex;
+  width: max-content;
+  animation: logoTrain 95s linear infinite;
+}
+
+.logo-set {
+  display: flex;
+  gap: 1rem;
+  padding-right: 1rem;
+}
+
+.client-logo {
+  display: grid;
+  flex: 0 0 12rem;
+  place-items: center;
+  height: 7rem;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.client-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
 .gallery-item figcaption {
   position: absolute;
   right: 0;
@@ -622,6 +666,15 @@ button {
   }
   to {
     transform: translate3d(1.5rem, 0.75rem, 0);
+  }
+}
+
+@keyframes logoTrain {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
   }
 }
 

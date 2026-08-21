@@ -46,6 +46,11 @@ const gallery = [
 
 const locations = ["Bangalore", "Kerala", "Mumbai", "Delhi", "Hyderabad", "Kolkata"];
 
+const clientLogos = Array.from({ length: 12 }, (_, index) => ({
+  src: `assets/client-logos/client-${index + 1}.jpeg`,
+  alt: `SWOTEDGE client logo ${index + 1}`,
+}));
+
 export default function HomePage() {
   return (
     <>
@@ -122,6 +127,26 @@ export default function HomePage() {
               <figcaption>{item.title}</figcaption>
             </figure>
           ))}
+        </div>
+      </section>
+
+      <section className="section clients-section" aria-labelledby="clients-title">
+        <div className="section-heading">
+          <p className="eyebrow">Our Cilentele</p>
+          <h2 id="clients-title">Trusted by brands that make an impact.</h2>
+        </div>
+        <div className="logo-marquee" aria-label="SWOTEDGE client logos">
+          <div className="logo-track">
+            {[0, 1].map((set) => (
+              <div className="logo-set" key={set} aria-hidden={set === 1}>
+                {clientLogos.map((logo) => (
+                  <div className="client-logo" key={`${set}-${logo.src}`}>
+                    <img src={assetUrl(logo.src)} alt={set === 0 ? logo.alt : ""} />
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
