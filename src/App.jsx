@@ -1,23 +1,19 @@
 import { useEffect, useMemo, useState } from "react";
-import { Link, NavLink, Route, Routes, useLocation } from "react-router-dom";
 import HomePage from "./pages/HomePage";
-import ServicesPage from "./pages/ServicesPage";
-import WorkPage from "./pages/WorkPage";
-import ContactPage from "./pages/ContactPage";
 
 const assetUrl = (path) => `${import.meta.env.BASE_URL}${path}`;
 
 const siteConfig = {
-  whatsappNumber: "919620417344",
+  whatsappNumber: "919995112919",
   whatsappMessage:
-    "Hello SWOTEDGE, I would like to discuss a new event, activation, or brand experience project.",
+    "Hello SWOTEDGE, I would like to discuss an event, activation, branding, or experiential marketing project.",
 };
 
 const navItems = [
-  { to: "/", label: "Home" },
-  { to: "/services", label: "Services" },
-  { to: "/work", label: "Work" },
-  { to: "/contact", label: "Contact" },
+  { href: "#experience", label: "Experience" },
+  { href: "#services", label: "Services" },
+  { href: "#gallery", label: "Gallery" },
+  { href: "#contact", label: "Contact" },
 ];
 
 function Loader({ isHidden }) {
@@ -27,7 +23,7 @@ function Loader({ isHidden }) {
         <div className="loader__logo-wrap">
           <img className="loader__logo" src={assetUrl("assets/logo.png")} alt="SWOTEDGE logo" />
         </div>
-        <p className="loader__tag">Beyond Screens & Spaces</p>
+        <p className="loader__tag">Engage | Inspire | Transform</p>
         <div className="loader__bar">
           <span className="loader__bar-fill" />
         </div>
@@ -36,24 +32,17 @@ function Loader({ isHidden }) {
   );
 }
 
-function Shell({ children, whatsappUrl }) {
+function Shell({ whatsappUrl }) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const location = useLocation();
-
-  useEffect(() => {
-    setMenuOpen(false);
-  }, [location.pathname]);
 
   return (
     <div className="app-shell">
-      <div className="ambient ambient--top" />
-      <div className="ambient ambient--bottom" />
       <div className="grid-wash" />
 
       <header className="topbar">
-        <Link className="brand" to="/">
+        <a className="brand" href="#top" aria-label="SWOTEDGE home">
           <img src={assetUrl("assets/logo.png")} alt="SWOTEDGE logo" />
-        </Link>
+        </a>
 
         <button
           className="menu-toggle"
@@ -67,18 +56,20 @@ function Shell({ children, whatsappUrl }) {
 
         <nav className={`nav ${menuOpen ? "is-open" : ""}`} id="site-nav">
           {navItems.map((item) => (
-            <NavLink
-              key={item.to}
-              to={item.to}
-              className={({ isActive }) => (isActive ? "is-active" : "")}
+            <a
+              key={item.href}
+              href={item.href}
+              onClick={() => setMenuOpen(false)}
             >
               {item.label}
-            </NavLink>
+            </a>
           ))}
         </nav>
       </header>
 
-      <main>{children}</main>
+      <main>
+        <HomePage whatsappUrl={whatsappUrl} />
+      </main>
 
       <a
         className="whatsapp-float"
@@ -132,14 +123,7 @@ export default function App() {
   return (
     <>
       <Loader isHidden={loaderHidden} />
-      <Shell whatsappUrl={whatsappUrl}>
-        <Routes>
-          <Route path="/" element={<HomePage whatsappUrl={whatsappUrl} />} />
-          <Route path="/services" element={<ServicesPage />} />
-          <Route path="/work" element={<WorkPage />} />
-          <Route path="/contact" element={<ContactPage whatsappUrl={whatsappUrl} />} />
-        </Routes>
-      </Shell>
+      <Shell whatsappUrl={whatsappUrl} />
     </>
   );
 }

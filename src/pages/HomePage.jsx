@@ -1,217 +1,167 @@
-import { Link } from "react-router-dom";
-
 const assetUrl = (path) => `${import.meta.env.BASE_URL}${path}`;
 
-const stats = [
-  { value: "100+", label: "Agile projects delivered across India" },
-  { value: "50+", label: "Execution and production specialists" },
-  { value: "Pan-India", label: "Network built for speed and consistency" },
-  { value: "360°", label: "Strategy, fabrication, branding, and amplification" },
+const services = [
+  "Corporate Events & Employee Engagements",
+  "Brand Activation & Product Launches",
+  "Exhibitions & Trade Shows",
+  "Video Production",
+  "Corporate & Retail Branding",
+  "Outdoor Media",
+  "Gifting",
+  "Social Media & Digital Marketing",
 ];
 
-const capabilities = [
+const gallery = [
   {
-    title: "Experiential Events",
-    text: "Annual days, conferences, MICE, dealer meets, product launches, weddings, and recognition programs.",
+    src: "assets/swotedge-gallery/image-07.jpeg",
+    title: "Stage Design",
+    alt: "SWOTEDGE stage lighting and event setup",
   },
   {
-    title: "Live Audience Moments",
-    text: "Celebrity events, concerts, exhibitions, sporting events, employee engagements, team outings, and trainings.",
+    src: "assets/swotedge-gallery/image-06.jpeg",
+    title: "Corporate Experiences",
+    alt: "SWOTEDGE corporate event stage and audience setup",
   },
   {
-    title: "Activation Systems",
-    text: "BTL activations, sales promotions, roadshows, RWA activations, rural marketing, mall activations, and outlet launches.",
+    src: "assets/swotedge-gallery/image-02.jpeg",
+    title: "Leadership Forums",
+    alt: "Speaker at a branded SWOTEDGE event podium",
   },
   {
-    title: "Brand Environments",
-    text: "Wall graphics, signages, office branding, retail POSM deployment, digital marketing, and influencer marketing.",
+    src: "assets/swotedge-gallery/image-04.jpeg",
+    title: "Brand Moments",
+    alt: "AMRUT event branding installation by SWOTEDGE",
+  },
+  {
+    src: "assets/swotedge-gallery/image-01.jpeg",
+    title: "Employee Engagements",
+    alt: "Corporate team event managed by SWOTEDGE",
+  },
+  {
+    src: "assets/swotedge-gallery/image-08.jpeg",
+    title: "Live Production",
+    alt: "Live event production with lighting and stage by SWOTEDGE",
   },
 ];
 
-const portfolioImages = [
-  {
-    src: "/assets/brochure/page-29-img-02.jpg",
-    alt: "Corporate conference stage and lighting execution by SWOTEDGE",
-    title: "Conference Production",
-  },
-  {
-    src: "/assets/brochure/page-34-img-02.jpg",
-    alt: "Exhibition stall and trade-show setup by SWOTEDGE",
-    title: "Exhibition Environments",
-  },
-  {
-    src: "/assets/brochure/page-49-img-02.jpg",
-    alt: "Office branding and wall graphics installations by SWOTEDGE",
-    title: "Branded Spaces",
-  },
-  {
-    src: "/assets/brochure/page-39-img-02.jpg",
-    alt: "Custom gifting and curated brand hamper experience by SWOTEDGE",
-    title: "Gifting Experiences",
-  },
-];
+const locations = ["Bangalore", "Kerala", "Mumbai", "Delhi", "Hyderabad", "Kolkata"];
 
 export default function HomePage({ whatsappUrl }) {
   return (
     <>
-      <section className="hero section">
-        <div className="hero__copy">
-          <p className="eyebrow">Martech • Events • Execution</p>
-          <h1>We build event experiences people feel before they even walk in.</h1>
+      <section className="hero" id="top">
+        <div className="hero__media" aria-hidden="true">
+          <img src={assetUrl("assets/swotedge-gallery/image-07.jpeg")} alt="" />
+        </div>
+        <div className="hero__shade" />
+        <div className="hero__content">
+          <p className="eyebrow">Integrated Martech & Experiential Solutions</p>
+          <h1>SWOTEDGE</h1>
+          <p className="tagline">ENGAGE | INSPIRE | TRANSFORM</p>
           <p className="hero__lede">
-            SWOTEDGE Media India Private Limited delivers integrated experiential marketing,
-            production, fabrication, retail branding, environmental graphics, and digital
-            amplification across physical and digital ecosystems.
+            SWOTEDGE Media is where strategy, creativity, technology, and execution come together
+            to create memorable brand experiences across India.
           </p>
-
           <div className="hero__actions">
             <a className="button button--primary" href={whatsappUrl} target="_blank" rel="noreferrer">
-              Start on WhatsApp
+              Start a WhatsApp Chat
             </a>
-            <Link className="button button--ghost" to="/work">
-              View Case Studies
-            </Link>
-          </div>
-
-          <div className="hero__ticker">
-            <span>Product Launches</span>
-            <span>Corporate Conferences</span>
-            <span>Luxury Weddings</span>
-            <span>Retail Activations</span>
-            <span>Exhibitions</span>
+            <a className="button button--ghost" href="#gallery">
+              View Event Moments
+            </a>
           </div>
         </div>
-
-        <div className="hero__cards">
-          <article className="glass-card glass-card--feature">
-            <img
-              className="feature-visual"
-              src={assetUrl("assets/brochure/page-30-img-02.jpg")}
-              alt="Large-format event setup and experiential stage design by SWOTEDGE"
-            />
-            <div className="feature-copy">
-              <p className="card-label">Creating Experiences Beyond Screens & Spaces</p>
-              <h2>Immersive event design backed by scalable execution strength.</h2>
-              <div className="card-metrics">
-                <span>Experience Design</span>
-                <span>Fabrication</span>
-                <span>Branding</span>
-                <span>Digital Boost</span>
-              </div>
-            </div>
-          </article>
-
-          <div className="hero-mosaic">
-            <article className="glass-card glass-card--quote">
-              <p>
-                SWOTEDGE combines strategy, creativity, production, and technology to create
-                meaningful engagement, stronger visibility, and lasting consumer impact.
-              </p>
-            </article>
-            <img
-              className="mosaic-image"
-              src={assetUrl("assets/brochure/page-52-img-02.jpg")}
-              alt="Modern branded office environment delivered by SWOTEDGE"
-            />
-            <img
-              className="mosaic-image"
-              src={assetUrl("assets/brochure/page-40-img-02.jpg")}
-              alt="Premium client gifting kit produced by SWOTEDGE"
-            />
-          </div>
+        <div className="launch-strip">
+          <span>The next experience is being staged</span>
+          <span>Full digital showcase arriving soon</span>
         </div>
       </section>
 
-      <section className="section">
+      <section className="section intro-section" id="experience">
         <div className="section-heading">
-          <p className="eyebrow">Impact Numbers</p>
-          <h2>Proof that scale and polish can live together.</h2>
+          <p className="eyebrow">Preview Mode</p>
+          <h2>Their new digital stage is being prepared.</h2>
         </div>
-        <div className="stats-grid">
-          {stats.map((stat) => (
-            <article className="metric-card" key={stat.value}>
-              <strong>{stat.value}</strong>
-              <span>{stat.label}</span>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="section-heading">
-          <p className="eyebrow">Who We Are</p>
-          <h2>Built to make brands experienced, not just displayed.</h2>
-        </div>
-        <div className="two-column">
-          <article className="panel">
-            <p>
-              SWOTEDGE is a full-service martech company delivering strategic, creative, and
-              execution-led brand marketing across events, experiential activations, retail
-              branding, fabrication, environmental graphics, and digital amplification.
-            </p>
-          </article>
-          <article className="panel panel--warm">
-            <p className="pull-quote">
-              Ownership, agility, and a solution-first culture shape every execution from concept
-              to on-ground delivery.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="section-heading">
-          <p className="eyebrow">Core Capability System</p>
-          <h2>The service stack behind the spectacle.</h2>
-        </div>
-        <div className="capability-grid">
-          {capabilities.map((capability) => (
-            <article className="capability-card" key={capability.title}>
-              <h3>{capability.title}</h3>
-              <p>{capability.text}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="section-heading">
-          <p className="eyebrow">Selected Visuals</p>
-          <h2>Real frames from the SWOTEDGE portfolio.</h2>
-          <p className="page-intro">
-            These visuals are taken from the client brochure and now woven directly into the
-            website to give the brand a more authentic, client-ready presence.
+        <div className="intro-copy">
+          <p>
+            We help brands connect with their audiences through integrated solutions spanning
+            events, experiential activations, retail branding, fabrication, and digital
+            amplification. Every experience we create is designed to engage, inspire, and deliver
+            meaningful impact across physical and digital touchpoints.
+          </p>
+          <p>
+            With a passion for innovation and a commitment to execution excellence, SWOTEDGE
+            transforms ambitious ideas into scalable, future-ready brand experiences across India.
           </p>
         </div>
-        <div className="portfolio-gallery">
-          {portfolioImages.map((image) => (
-            <article className="portfolio-card" key={image.src}>
-              <img src={assetUrl(image.src.replace(/^\//, ""))} alt={image.alt} />
-              <div className="portfolio-card__overlay">
-                <p>{image.title}</p>
-              </div>
+      </section>
+
+      <section className="section services-section" id="services">
+        <div className="section-heading">
+          <p className="eyebrow">What We Craft</p>
+          <h2>Experiences, launches, content, visibility, and everything around them.</h2>
+        </div>
+        <div className="services-grid">
+          {services.map((service, index) => (
+            <article className="service-card" key={service}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <h3>{service}</h3>
+              <p>Detailed showcase arriving soon. Connect on WhatsApp for current project discussions.</p>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="section section--cta">
-        <div className="cta-block">
-          <div>
-            <p className="eyebrow">Why SWOTEDGE</p>
-            <h2>Nationwide reach, integrated teams, dependable outcomes.</h2>
-            <p>
-              Pan-India operations, strong vendor ecosystems, and reliable field execution let
-              SWOTEDGE move quickly without losing the finish.
-            </p>
-          </div>
-          <div className="hero__actions">
-            <Link className="button button--ghost" to="/services">
-              Explore All Services
-            </Link>
-            <Link className="button button--primary" to="/contact">
-              Plan a Meeting
-            </Link>
+      <section className="section gallery-section" id="gallery">
+        <div className="section-heading">
+          <p className="eyebrow">Event Frames</p>
+          <h2>A glimpse of the energy behind SWOTEDGE.</h2>
+        </div>
+        <div className="gallery-grid">
+          {gallery.map((item, index) => (
+            <figure className={`gallery-item gallery-item--${index + 1}`} key={item.src}>
+              <img src={assetUrl(item.src)} alt={item.alt} />
+              <figcaption>{item.title}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
+      <section className="section reach-section">
+        <div className="section-heading">
+          <p className="eyebrow">Across India</p>
+          <h2>Built for brands that need ideas to travel well.</h2>
+        </div>
+        <div className="location-list">
+          {locations.map((location) => (
+            <span key={location}>{location}</span>
+          ))}
+        </div>
+      </section>
+
+      <section className="contact-section" id="contact">
+        <div className="contact-content">
+          <p className="eyebrow">Connect With SWOTEDGE</p>
+          <h2>Planning an event, launch, activation, or brand experience?</h2>
+          <p>
+            The full website is being curated. Until then, the team is available for project
+            discussions, brand enquiries, and event planning conversations.
+          </p>
+          <div className="contact-actions">
+            <a className="button button--primary" href={whatsappUrl} target="_blank" rel="noreferrer">
+              Chat on WhatsApp
+            </a>
+            <a className="button button--ghost" href="mailto:info@swotedge.com">
+              info@swotedge.com
+            </a>
+            <a
+              className="button button--ghost"
+              href="https://www.instagram.com/swotedgemedia/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Instagram
+            </a>
           </div>
         </div>
       </section>
