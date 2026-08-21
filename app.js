@@ -1,5 +1,5 @@
 const siteConfig = {
-  whatsappNumber: "9620417344",
+  whatsappNumber: "919620417344",
   whatsappMessage:
     "Hello SWOTEDGE, I would like to discuss a new event or brand experience project.",
 };
