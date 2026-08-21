@@ -4,7 +4,7 @@ import HomePage from "./pages/HomePage";
 const assetUrl = (path) => `${import.meta.env.BASE_URL}${path}`;
 
 const siteConfig = {
-  whatsappNumber: "919995112919",
+  whatsappNumber: "9995112919",
   whatsappMessage:
     "Hello SWOTEDGE, I would like to discuss an event, activation, branding, or experiential marketing project.",
 };
@@ -68,7 +68,7 @@ function Shell({ whatsappUrl }) {
       </header>
 
       <main>
-        <HomePage whatsappUrl={whatsappUrl} />
+        <HomePage />
       </main>
 
       <a

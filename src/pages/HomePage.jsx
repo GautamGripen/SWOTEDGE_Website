@@ -46,7 +46,7 @@ const gallery = [
 
 const locations = ["Bangalore", "Kerala", "Mumbai", "Delhi", "Hyderabad", "Kolkata"];
 
-export default function HomePage({ whatsappUrl }) {
+export default function HomePage() {
   return (
     <>
       <section className="hero" id="top">
@@ -63,35 +63,33 @@ export default function HomePage({ whatsappUrl }) {
             to create memorable brand experiences across India.
           </p>
           <div className="hero__actions">
-            <a className="button button--primary" href={whatsappUrl} target="_blank" rel="noreferrer">
-              Start a WhatsApp Chat
-            </a>
             <a className="button button--ghost" href="#gallery">
               View Event Moments
             </a>
           </div>
         </div>
         <div className="launch-strip">
-          <span>The next experience is being staged</span>
-          <span>Full digital showcase arriving soon</span>
+          <span>A new experience is taking shape</span>
+          <span>SWOTEDGE digital showcase unveiling soon</span>
         </div>
       </section>
 
       <section className="section intro-section" id="experience">
         <div className="section-heading">
-          <p className="eyebrow">Preview Mode</p>
-          <h2>Their new digital stage is being prepared.</h2>
+          <p className="eyebrow">Experience in Progress</p>
+          <h2>Something unforgettable is taking the stage.</h2>
         </div>
         <div className="intro-copy">
           <p>
-            We help brands connect with their audiences through integrated solutions spanning
-            events, experiential activations, retail branding, fabrication, and digital
-            amplification. Every experience we create is designed to engage, inspire, and deliver
-            meaningful impact across physical and digital touchpoints.
+            SWOTEDGE is crafting a new digital home for brands that believe every launch, event,
+            activation, and audience moment should feel alive. The full showcase is being built to
+            reveal our work across events, experiential activations, retail branding, fabrication,
+            and digital amplification.
           </p>
           <p>
-            With a passion for innovation and a commitment to execution excellence, SWOTEDGE
-            transforms ambitious ideas into scalable, future-ready brand experiences across India.
+            Until then, consider this your first look behind the curtain: a glimpse of the energy,
+            detail, and execution excellence that helps ambitious ideas become memorable brand
+            experiences across India.
           </p>
         </div>
       </section>
@@ -106,7 +104,7 @@ export default function HomePage({ whatsappUrl }) {
             <article className="service-card" key={service}>
               <span>{String(index + 1).padStart(2, "0")}</span>
               <h3>{service}</h3>
-              <p>Detailed showcase arriving soon. Connect on WhatsApp for current project discussions.</p>
+              <p>Detailed showcase arriving soon. The complete experience portfolio is being curated.</p>
             </article>
           ))}
         </div>
@@ -148,9 +146,6 @@ export default function HomePage({ whatsappUrl }) {
             discussions, brand enquiries, and event planning conversations.
           </p>
           <div className="contact-actions">
-            <a className="button button--primary" href={whatsappUrl} target="_blank" rel="noreferrer">
-              Chat on WhatsApp
-            </a>
             <a className="button button--ghost" href="mailto:info@swotedge.com">
               info@swotedge.com
             </a>
