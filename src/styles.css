@@ -54,7 +54,7 @@ button {
   isolation: isolate;
   background:
     linear-gradient(rgba(9, 9, 13, 0.2), rgba(9, 9, 13, 0.5)),
-    url("/SWOTEDGE_Website/assets/event-atmosphere-bg.svg") center top / cover fixed,
+    url("/SWOTEDGE_Website/assets/event-atmosphere-bg.svg?v=116b038") center top / cover fixed,
     radial-gradient(ellipse 75% 38% at 50% -6%, rgba(243, 24, 34, 0.22), transparent 72%),
     radial-gradient(ellipse 46% 28% at 9% 40%, rgba(255, 198, 139, 0.12), transparent 70%),
     radial-gradient(ellipse 44% 26% at 92% 74%, rgba(126, 23, 22, 0.24), transparent 70%),
