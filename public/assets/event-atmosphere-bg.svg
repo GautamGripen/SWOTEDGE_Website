@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1600" viewBox="0 0 1920 1600" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="redGlow" cx="50%" cy="0%" r="70%">
+      <stop offset="0%" stop-color="#f31822" stop-opacity="0.34"/>
+      <stop offset="42%" stop-color="#7e1716" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#09090d" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="amberGlow" cx="18%" cy="18%" r="48%">
+      <stop offset="0%" stop-color="#ffc68b" stop-opacity="0.28"/>
+      <stop offset="54%" stop-color="#ffc68b" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="#09090d" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="rightGlow" cx="88%" cy="28%" r="48%">
+      <stop offset="0%" stop-color="#f31822" stop-opacity="0.18"/>
+      <stop offset="62%" stop-color="#7e1716" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#09090d" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="stageFade" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#09090d" stop-opacity="0.06"/>
+      <stop offset="50%" stop-color="#09090d" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#040406" stop-opacity="0.96"/>
+    </linearGradient>
+    <linearGradient id="beamWarm" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#ffc68b" stop-opacity="0"/>
+      <stop offset="48%" stop-color="#ffc68b" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#ffc68b" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="beamRed" x1="1" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f31822" stop-opacity="0"/>
+      <stop offset="45%" stop-color="#f31822" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#f31822" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="softBlur">
+      <feGaussianBlur stdDeviation="22"/>
+    </filter>
+    <filter id="tinyBlur">
+      <feGaussianBlur stdDeviation="1.4"/>
+    </filter>
+    <pattern id="grid" width="96" height="96" patternUnits="userSpaceOnUse">
+      <path d="M 96 0 L 0 0 0 96" fill="none" stroke="#ffffff" stroke-opacity="0.035" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1920" height="1600" fill="#09090d"/>
+  <rect width="1920" height="1600" fill="url(#redGlow)"/>
+  <rect width="1920" height="1600" fill="url(#amberGlow)"/>
+  <rect width="1920" height="1600" fill="url(#rightGlow)"/>
+  <rect width="1920" height="1600" fill="url(#grid)" opacity="0.58"/>
+
+  <g filter="url(#softBlur)" opacity="0.82">
+    <path d="M255 -80 L548 -80 L1060 1600 L580 1600 Z" fill="url(#beamWarm)" transform="rotate(-9 680 760)"/>
+    <path d="M1192 -90 L1452 -90 L1015 1600 L565 1600 Z" fill="url(#beamRed)" transform="rotate(7 1050 760)"/>
+    <path d="M820 -80 L1030 -80 L1295 1600 L920 1600 Z" fill="#ffffff" opacity="0.045"/>
+  </g>
+
+  <g opacity="0.34" filter="url(#tinyBlur)">
+    <circle cx="224" cy="226" r="3" fill="#ffc68b"/>
+    <circle cx="386" cy="148" r="2" fill="#fff8f0"/>
+    <circle cx="590" cy="278" r="2.4" fill="#f31822"/>
+    <circle cx="792" cy="184" r="2" fill="#ffc68b"/>
+    <circle cx="1048" cy="248" r="2.6" fill="#fff8f0"/>
+    <circle cx="1225" cy="118" r="3" fill="#f31822"/>
+    <circle cx="1486" cy="310" r="2.4" fill="#ffc68b"/>
+    <circle cx="1658" cy="188" r="2" fill="#fff8f0"/>
+    <circle cx="1768" cy="422" r="3" fill="#f31822"/>
+    <circle cx="130" cy="620" r="2" fill="#fff8f0"/>
+    <circle cx="472" cy="536" r="3" fill="#ffc68b"/>
+    <circle cx="1514" cy="658" r="2.3" fill="#fff8f0"/>
+    <circle cx="1712" cy="732" r="3.2" fill="#ffc68b"/>
+  </g>
+
+  <g opacity="0.18">
+    <path d="M0 1294 C220 1248 372 1262 548 1298 C760 1342 936 1334 1100 1298 C1324 1248 1542 1262 1920 1315 L1920 1600 L0 1600 Z" fill="#000000"/>
+    <path d="M0 1392 C250 1352 460 1376 680 1412 C902 1448 1094 1432 1328 1386 C1534 1346 1728 1370 1920 1406 L1920 1600 L0 1600 Z" fill="#050506"/>
+  </g>
+
+  <rect width="1920" height="1600" fill="url(#stageFade)"/>
+</svg>
